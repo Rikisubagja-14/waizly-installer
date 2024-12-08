@@ -10,8 +10,7 @@
   "require": {
     "php": "^7.4|^8.0",
     "illuminate/console": "^8.0|^9.0|^10.0",
-    "illuminate/support": "^8.0|^9.0|^10.0",
-    "rikisubagja/waizly-installer": "dev-main"
+    "illuminate/support": "^8.0|^9.0|^10.0"
   },
   "autoload-dev": {
     "psr-4": {
@@ -27,7 +26,7 @@
   "prefer-stable": true,
   "repositories": [
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/Rikisubagja-14/waizly-installer.git"
     }
   ]
