@@ -23,6 +23,12 @@
       ]
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/Rikisubagja-14/waizly-installer.git"
+      }
+    ]
   }
   

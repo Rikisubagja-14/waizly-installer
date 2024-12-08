@@ -8,3 +8,5 @@ To install this package, add it to your Laravel project using Composer:
 
 ```bash
 composer require rikisubagja/waizly-installer
+
+php artisan waizly:install
