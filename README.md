@@ -10,3 +10,12 @@ To install this package, add it to your Laravel project using Composer:
 composer require rikisubagja/waizly-installer
 
 php artisan waizly:install
+
+add app/Providers/AppServiceProvider.php
+
+public function register()
+{
+    $this->commands([
+        \WaizlyInstaller\Console\WaizlyInstaller::class,
+    ]);
+}

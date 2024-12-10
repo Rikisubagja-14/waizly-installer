@@ -25,15 +25,6 @@ class WaizlyInstall extends Command
             $this->error('.env file is missing. Please create an .env file.');
             return 1;
         }
-
-        // Add the default environment variables if missing
-        $this->updateEnvFile();
-        // Check if the admin user exists
-        if (!$this->option('skip-admin-creation') && !$this->adminExists()) {
-            $this->info('Creating admin user...');
-            $this->createAdminUser();
-        }
-
         $this->info('Waizly application installed successfully!');
         return 0;
     }
@@ -54,21 +45,5 @@ class WaizlyInstall extends Command
         }
     }
 
-    protected function adminExists()
-    {
-        return DB::table('users')->where('email', 'admin@waizly.com')->exists();
-    }
 
-    protected function createAdminUser()
-    {
-        DB::table('users')->insert([
-            'name' => 'Admin User',
-            'email' => 'admin@waizly.com',
-            'password' => bcrypt('admin123'),  // Default password (make sure to hash)
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        $this->info('Admin user created successfully!');
-    }
 }
