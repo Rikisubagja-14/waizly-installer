@@ -28,11 +28,6 @@ class WaizlyInstall extends Command
 
         // Add the default environment variables if missing
         $this->updateEnvFile();
-
-        // Migrate database
-        $this->info('Running migrations...');
-        $this->call('migrate', ['--force' => true]);
-
         // Check if the admin user exists
         if (!$this->option('skip-admin-creation') && !$this->adminExists()) {
             $this->info('Creating admin user...');
